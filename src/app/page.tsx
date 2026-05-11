@@ -12,7 +12,7 @@ const INTAKE_HERO =
 export default function Home() {
   return (
     <main>
-      <section className="relative flex min-h-[calc(100dvh-4rem)] flex-col overflow-hidden border-b border-border bg-stone-900 text-stone-50">
+      <section className="relative flex min-h-[calc(100dvh-6rem)] flex-col overflow-hidden border-b border-border bg-stone-900 text-stone-50">
         <div
           className="pointer-events-none absolute inset-0 z-0 opacity-40"
           style={{
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
           </div>
 
-          <figure className="relative mx-auto aspect-[3/4] w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-stone-600/40 shadow-2xl shadow-black/50 sm:max-w-[320px] lg:mx-0 lg:max-h-[min(420px,calc(100dvh-9rem))] lg:max-w-[min(100%,360px)] lg:justify-self-end lg:aspect-[3/4]">
+          <figure className="relative mx-auto aspect-[3/4] w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-stone-600/40 shadow-2xl shadow-black/50 sm:max-w-[320px] lg:mx-0 lg:max-h-[min(420px,calc(100dvh-11rem))] lg:max-w-[min(100%,360px)] lg:justify-self-end lg:aspect-[3/4]">
             <Image
               src={HERO_TRAINER}
               alt="Chase Williams, personal trainer (placeholder photo)"
@@ -70,7 +70,7 @@ export default function Home() {
 
       <section
         id="about"
-        className="flex min-h-[calc(100dvh-4rem)] flex-col scroll-mt-20 border-b border-border bg-background"
+        className="flex min-h-[calc(100dvh-6rem)] flex-col scroll-mt-24 border-b border-border bg-background"
       >
         <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -123,7 +123,7 @@ export default function Home() {
 
       <section
         id="program"
-        className="flex min-h-[calc(100dvh-4rem)] flex-col border-y border-border bg-stone-100/60"
+        className="flex min-h-[calc(100dvh-6rem)] flex-col border-y border-border bg-stone-100/60"
       >
         <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-4 py-12 sm:px-6 sm:py-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -172,7 +172,7 @@ export default function Home() {
 
       <section
         id="intake"
-        className="flex min-h-[calc(100dvh-4rem)] flex-col scroll-mt-20 border-t border-border bg-background lg:border-t-0"
+        className="flex min-h-[calc(100dvh-6rem)] flex-col scroll-mt-24 border-t border-border bg-background lg:border-t-0"
       >
         <div className="mx-auto grid min-h-0 w-full max-w-6xl flex-1 grid-cols-1 gap-6 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-2 lg:gap-0 lg:px-8 lg:py-6">
           <figure className="relative isolate h-52 w-full overflow-hidden rounded-2xl bg-stone-200 sm:h-60 lg:h-full lg:min-h-0 lg:rounded-none lg:rounded-l-2xl">
