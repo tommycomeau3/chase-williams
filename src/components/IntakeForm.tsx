@@ -28,7 +28,7 @@ const STEP_COUNT = 9;
 const emailOk = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
 
 const titleClass =
-  "text-lg font-medium tracking-tight text-stone-900 sm:text-xl sm:leading-snug";
+  "text-lg font-medium tracking-tight text-foreground sm:text-xl sm:leading-snug";
 
 export function IntakeForm() {
   const [values, setValues] = useState(initial);
@@ -118,17 +118,17 @@ export function IntakeForm() {
         className="flex min-h-0 flex-1 flex-col justify-center py-4"
         role="status"
       >
-        <p className="text-xl font-medium tracking-tight text-stone-900 sm:text-2xl">
+        <p className="text-xl font-medium tracking-tight text-foreground sm:text-2xl">
           You&apos;re on the list.
         </p>
-        <p className="mt-2 max-w-md text-sm text-stone-500 leading-relaxed">
+        <p className="mt-2 max-w-md text-sm text-muted leading-relaxed">
           Chase has been notified by text and will follow up using the contact
           details you shared.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm font-medium text-teal-700 transition hover:text-teal-800"
+          className="mt-6 text-sm font-medium text-accent transition hover:text-accent-muted"
         >
           Submit another inquiry →
         </button>
@@ -137,10 +137,10 @@ export function IntakeForm() {
   }
 
   const fieldClass =
-    "w-full border-0 border-b border-stone-300 bg-transparent px-0 py-2 text-base text-stone-900 placeholder:text-stone-400 outline-none transition-[border-color] focus:border-teal-500";
+    "w-full border-0 border-b border-border bg-transparent px-0 py-2 text-base text-foreground placeholder:text-muted outline-none transition-[border-color] focus:border-accent";
 
   const textareaClass =
-    "w-full rounded-md border border-stone-200/80 bg-transparent px-2.5 py-2 text-base leading-snug text-stone-900 placeholder:text-stone-400 outline-none transition-colors focus:border-teal-500";
+    "w-full rounded-md border border-border bg-transparent px-2.5 py-2 text-base leading-snug text-foreground placeholder:text-muted outline-none transition-colors focus:border-accent";
 
   return (
     <div className="relative flex min-h-0 w-full flex-1 flex-col">
@@ -176,10 +176,10 @@ export function IntakeForm() {
                 key={i}
                 className={`h-1.5 min-w-0 flex-1 rounded-full transition-all duration-300 ease-out ${
                   done
-                    ? "bg-teal-600"
+                    ? "bg-accent"
                     : current
-                      ? "bg-teal-500 shadow-[0_0_0_3px_rgba(13,148,136,0.22)]"
-                      : "bg-stone-200"
+                      ? "bg-accent-muted shadow-[0_0_0_3px_rgba(52,211,153,0.25)]"
+                      : "bg-border"
                 }`}
                 aria-hidden
               />
@@ -187,11 +187,11 @@ export function IntakeForm() {
           })}
         </div>
         <div className="mt-2 flex items-baseline justify-between gap-2">
-          <span className="text-xs font-medium text-stone-600 sm:text-sm">
+          <span className="text-xs font-medium text-muted sm:text-sm">
             Question{" "}
-            <span className="tabular-nums text-stone-900">{step + 1}</span>
+            <span className="tabular-nums text-foreground">{step + 1}</span>
           </span>
-          <span className="text-xs tabular-nums text-stone-400 sm:text-sm">
+          <span className="text-xs tabular-nums text-muted sm:text-sm">
             {STEP_COUNT} total
           </span>
         </div>
@@ -292,7 +292,7 @@ export function IntakeForm() {
           {step === 4 && (
             <>
               <h3 className={titleClass}>Training experience?</h3>
-              <div className="mt-2 divide-y divide-stone-200/80 border-y border-stone-200/80 sm:mt-3">
+              <div className="mt-2 divide-y divide-border border-y border-border sm:mt-3">
                 {EXPERIENCE_OPTIONS.map((opt) => {
                   const selected = values.experience === opt;
                   return (
@@ -304,13 +304,13 @@ export function IntakeForm() {
                       }
                       className={`flex w-full items-center gap-3 py-2.5 text-left text-sm transition-colors sm:gap-3.5 sm:py-3 sm:text-[15px] ${
                         selected
-                          ? "text-teal-700"
-                          : "text-stone-700 hover:text-stone-900"
+                          ? "text-accent"
+                          : "text-muted hover:text-foreground"
                       }`}
                     >
                       <span
                         className={`mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
-                          selected ? "bg-teal-500" : "bg-stone-300"
+                          selected ? "bg-accent" : "bg-border"
                         }`}
                         aria-hidden
                       />
@@ -346,7 +346,7 @@ export function IntakeForm() {
           {step === 6 && (
             <>
               <h3 className={titleClass}>Injuries or things to coach around?</h3>
-              <p className="mt-1 text-xs text-stone-500">Optional.</p>
+              <p className="mt-1 text-xs text-muted">Optional.</p>
               <label className="mt-2 block sm:mt-3">
                 <span className="sr-only">Limitations</span>
                 <textarea
@@ -366,7 +366,7 @@ export function IntakeForm() {
           {step === 7 && (
             <>
               <h3 className={titleClass}>How did you hear about Chase?</h3>
-              <p className="mt-1 text-xs text-stone-500">Optional.</p>
+              <p className="mt-1 text-xs text-muted">Optional.</p>
               <label className="mt-2 block sm:mt-3">
                 <span className="sr-only">Referral</span>
                 <input
@@ -388,14 +388,14 @@ export function IntakeForm() {
           {step === 8 && (
             <>
               <h3 className={titleClass}>Send your answers?</h3>
-              <p className="mt-2 text-xs leading-relaxed text-stone-500 sm:text-sm">
+              <p className="mt-2 text-xs leading-relaxed text-muted sm:text-sm">
                 Chase gets a text summary and will reply at{" "}
-                <span className="text-stone-800">{values.email || "—"}</span>{" "}
-                · <span className="text-stone-800">{values.phone || "—"}</span>
+                <span className="text-foreground">{values.email || "—"}</span>{" "}
+                · <span className="text-foreground">{values.phone || "—"}</span>
               </p>
               {status === "error" && errorMessage && (
                 <p
-                  className="mt-4 border-l-2 border-red-500 pl-3 text-xs font-medium text-red-800 sm:text-sm"
+                  className="mt-4 border-l-2 border-red-400 pl-3 text-xs font-medium text-red-300 sm:text-sm"
                   role="alert"
                 >
                   {errorMessage}
@@ -406,12 +406,12 @@ export function IntakeForm() {
           </div>
         </div>
 
-        <div className="mt-auto flex shrink-0 items-center justify-between gap-4 border-t border-stone-200/70 pt-4">
+        <div className="mt-auto flex shrink-0 items-center justify-between gap-4 border-t border-border pt-4">
           <button
             type="button"
             onClick={back}
             disabled={step === 0 || status === "submitting"}
-            className="text-xs font-medium text-stone-500 transition hover:text-stone-900 disabled:pointer-events-none disabled:opacity-30 sm:text-sm"
+            className="text-xs font-medium text-muted transition hover:text-foreground disabled:pointer-events-none disabled:opacity-30 sm:text-sm"
           >
             ← Back
           </button>
@@ -420,7 +420,7 @@ export function IntakeForm() {
               type="button"
               onClick={next}
               disabled={!canGoNext()}
-              className="text-xs font-semibold text-teal-700 transition hover:text-teal-800 disabled:cursor-not-allowed disabled:opacity-35 sm:text-sm"
+              className="text-xs font-semibold text-accent transition hover:text-accent-muted disabled:cursor-not-allowed disabled:opacity-35 sm:text-sm"
             >
               Continue →
             </button>
@@ -429,7 +429,7 @@ export function IntakeForm() {
               type="button"
               onClick={submit}
               disabled={status === "submitting"}
-              className="text-xs font-semibold text-teal-700 transition hover:text-teal-800 disabled:cursor-not-allowed disabled:opacity-50 sm:text-sm"
+              className="text-xs font-semibold text-accent transition hover:text-accent-muted disabled:cursor-not-allowed disabled:opacity-50 sm:text-sm"
             >
               {status === "submitting" ? "Sending…" : "Send →"}
             </button>
